@@ -1,0 +1,1124 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://phpoffice.github.io/PhpDatabase/index.html">
+      
+      
+      
+        <link rel="next" href="features.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>PhpDatabase</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#phpdatabase" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="PhpDatabase" class="md-header__button md-logo" aria-label="PhpDatabase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PhpDatabase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/PHPOffice/PhpDatabase" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PHPOffice/PhpDatabase
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="PhpDatabase" class="md-nav__button md-logo" aria-label="PhpDatabase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    PhpDatabase
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/PHPOffice/PhpDatabase" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PHPOffice/PhpDatabase
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read a file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#views-constraints-and-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Views, constraints and expressions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convert
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access file format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Object model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="features.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formats.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://coveralls.io/github/PHPOffice/PhpDatabase" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coveralls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coverage/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="docs/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHPDoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read a file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#views-constraints-and-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Views, constraints and expressions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convert
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access file format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Object model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="phpdatabase">PhpDatabase</h1>
+<p>PhpDatabase is a pure PHP library to read and write database documents.</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Extension</th>
+<th style="text-align: center;">Read</th>
+<th style="text-align: center;">Write</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft Access 2007+</td>
+<td><code>.accdb</code></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Jet/ACE pages, memo/OLE long values, Unicode compression, indexes, relationships, properties</td>
+</tr>
+<tr>
+<td>Microsoft Access 2000-2003</td>
+<td><code>.mdb</code></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Jet 4 (Access 97/Jet 3 is not supported)</td>
+</tr>
+<tr>
+<td>OpenDocument Database (LibreOffice Base)</td>
+<td><code>.odb</code></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>embedded HSQLDB 1.8 database: MEMORY and CACHED tables</td>
+</tr>
+<tr>
+<td>SQLite 3</td>
+<td><code>.sqlite</code>, <code>.sqlite3</code>, <code>.db</code></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>B-trees, overflow pages, <code>WITHOUT ROWID</code> tables, UTF-8/UTF-16, WAL file</td>
+</tr>
+</tbody>
+</table>
+<p>No database engine, PDO driver or <code>zip</code> extension is needed: the files are read and written by the
+library itself (ODB packages through PclZip, with <a href="https://github.com/PHPOffice/Common">phpoffice/common</a>).
+Only <code>dom</code>, <code>mbstring</code> and <code>zlib</code> are required.</p>
+<p>The features supported by each reader and writer (versions, storage, schema, data types, document
+properties) are listed in <a href="features.html">features.md</a>; format internals are described in
+<a href="formats.html">formats.md</a>.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre><span></span><code>composer<span class="w"> </span>require<span class="w"> </span>phpoffice/phpdatabase
+</code></pre></div>
+<h2 id="usage">Usage</h2>
+<h3 id="create-a-database">Create a database</h3>
+<div class="highlight"><pre><span></span><code><span class="x">use PhpOffice\PhpDatabase\ColumnType;</span>
+<span class="x">use PhpOffice\PhpDatabase\Database;</span>
+<span class="x">use PhpOffice\PhpDatabase\ForeignKey;</span>
+<span class="x">use PhpOffice\PhpDatabase\IOFactory;</span>
+
+<span class="x">$database = new Database();</span>
+<span class="x">$database-&gt;getDocumentProperties()-&gt;setTitle('Library');</span>
+
+<span class="x">$books = $database-&gt;createTable('Books');</span>
+<span class="x">$books-&gt;createColumn('ID', ColumnType::INTEGER)-&gt;setPrimaryKey()-&gt;setAutoIncrement();</span>
+<span class="x">$books-&gt;createColumn('Title', ColumnType::TEXT, 200)-&gt;setNullable(false);</span>
+<span class="x">$books-&gt;createColumn('Price', ColumnType::DECIMAL)-&gt;setPrecision(8, 2);</span>
+<span class="x">$books-&gt;createColumn('Published', ColumnType::DATE);</span>
+<span class="x">$books-&gt;createColumn('Available', ColumnType::BOOLEAN)-&gt;setDefaultValue(true);</span>
+<span class="x">$books-&gt;createColumn('Cover', ColumnType::BLOB);</span>
+
+<span class="x">$books-&gt;addRow(['Title' =&gt; 'Les Misérables', 'Price' =&gt; '12.90', 'Published' =&gt; '1862-04-03']);</span>
+<span class="x">$books-&gt;addRow([null, 'Germinal', 8.2, new DateTimeImmutable('1885-03-01'), false, null]); // list in the column order</span>
+
+<span class="x">$authors = $database-&gt;createTable('Authors');</span>
+<span class="x">$authors-&gt;createColumn('ID', ColumnType::INTEGER)-&gt;setPrimaryKey()-&gt;setAutoIncrement();</span>
+<span class="x">$authors-&gt;createColumn('Name', ColumnType::TEXT, 100)-&gt;setDescription('Full name');</span>
+<span class="x">$books-&gt;createColumn('AuthorID', ColumnType::INTEGER);</span>
+<span class="x">$books-&gt;createIndex('BooksTitle', ['Title']);                       // unique: createIndex(..., true)</span>
+<span class="x">$books-&gt;createForeignKey(['AuthorID'], 'Authors', ['ID'], 'BooksAuthors')</span>
+<span class="x">    -&gt;setOnDelete(ForeignKey::CASCADE);</span>
+
+<span class="x">$writer = IOFactory::createWriter($database, 'Accdb'); // Accdb, Odb, Sqlite</span>
+<span class="x">$writer-&gt;save('library.accdb');</span>
+</code></pre></div>
+<h3 id="read-a-file">Read a file</h3>
+<div class="highlight"><pre><span></span><code><span class="x">use PhpOffice\PhpDatabase\IOFactory;</span>
+<span class="x">use PhpOffice\PhpDatabase\Reader\ReaderInterface;</span>
+
+<span class="x">$database = IOFactory::load('library.odb');          // format detected from the content</span>
+<span class="x">// or: IOFactory::createReader('Odb')-&gt;load('library.odb', ReaderInterface::SKIP_ROWS);</span>
+
+<span class="x">foreach ($database-&gt;getTables() as $table) {</span>
+<span class="x">    echo $table-&gt;getName(), ': ', $table-&gt;getRowCount(), ' rows', PHP_EOL;</span>
+<span class="x">    foreach ($table-&gt;getColumns() as $column) {</span>
+<span class="x">        echo '  ', $column-&gt;getName(), ' ', $column-&gt;getType(), $column-&gt;isPrimaryKey() ? ' (PK)' : '', PHP_EOL;</span>
+<span class="x">    }</span>
+<span class="x">    foreach ($table-&gt;getRows() as $row) {</span>
+<span class="x">        echo '  ', $row['Title'], PHP_EOL;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div>
+<h3 id="views-constraints-and-expressions">Views, constraints and expressions</h3>
+<p>The SQL of views, check constraints, partial indexes and default expressions is written in standard SQL
+(<code>"identifier"</code>, <code>'text'</code>, <code>||</code>, <code>DATE '2024-01-31'</code>, <code>CURRENT_TIMESTAMP</code>, <code>LIMIT n</code>); each writer
+converts it to the dialect of its format (SQLite, HSQLDB, Access: <code>[identifier]</code>, <code>"text"</code>, <code>&amp;</code>,
+<code>#2024-01-31#</code>, <code>Now()</code>, <code>TOP n</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="x">use PhpOffice\PhpDatabase\Expression;</span>
+<span class="x">use PhpOffice\PhpDatabase\Index;</span>
+
+<span class="x">$books-&gt;getColumn('Price')-&gt;setDefaultValue(0);</span>
+<span class="x">$books-&gt;createColumn('Added', ColumnType::DATETIME)-&gt;setDefaultValue(Expression::currentTimestamp());</span>
+<span class="x">$books-&gt;createCheck('"Price" &gt;= 0');</span>
+<span class="x">$books-&gt;addIndex(new Index('BooksByPrice', ['Price' =&gt; 'DESC', 'Title' =&gt; 'ASC']));</span>
+<span class="x">$books-&gt;addIndex((new Index('BooksCheap', ['Title']))-&gt;setWhere('"Price" &lt; 10'));      // SQLite only</span>
+<span class="x">$books-&gt;addIndex(new Index('BooksLower', [new Expression('lower("Title")')]));        // SQLite only</span>
+<span class="x">$database-&gt;createView('CheapBooks', 'SELECT "Title", "Price" FROM "Books" WHERE "Price" &lt; 10');</span>
+<span class="x">$database-&gt;createTrigger('BooksAudit', 'Books', 'CREATE TRIGGER ...');              // SQLite only</span>
+
+<span class="x">$writer = IOFactory::createWriter($database, 'Odb');</span>
+<span class="x">$writer-&gt;save('library.odb');</span>
+<span class="x">print_r($writer-&gt;getWarnings()); // objects the format can't hold (here: the SQLite only indexes and the trigger)</span>
+</code></pre></div>
+<h3 id="convert">Convert</h3>
+<div class="highlight"><pre><span></span><code><span class="x">IOFactory::save(IOFactory::load('legacy.mdb'), 'legacy.sqlite');   // writer chosen from the extension</span>
+<span class="x">IOFactory::save(IOFactory::load('data.sqlite'), 'data.odb');</span>
+</code></pre></div>
+<h3 id="access-file-format">Access file format</h3>
+<div class="highlight"><pre><span></span><code><span class="x">use PhpOffice\PhpDatabase\Writer\Accdb;</span>
+
+<span class="x">(new Accdb($database))-&gt;setFormat(Accdb::FORMAT_ACCDB_2016)-&gt;save('data.accdb'); // BIGINT as "Large Number"</span>
+<span class="x">// FORMAT_MDB_2000, FORMAT_ACCDB_2007 (default for .accdb), FORMAT_ACCDB_2010, FORMAT_ACCDB_2016,</span>
+<span class="x">// FORMAT_ACCDB_2019 ("Date/Time Extended" for the columns with setFractionalSeconds(7))</span>
+</code></pre></div>
+<h2 id="object-model">Object model</h2>
+<ul>
+<li><code>Database</code>: the document (like <code>PhpPresentation</code>), with <code>DocumentProperties</code>, tables, views and triggers.</li>
+<li><code>Table</code>: name, description, columns, rows, indexes, foreign keys, check constraints, <code>WITHOUT ROWID</code>
+  (SQLite). A row is an array indexed by column name, holding PHP values.</li>
+<li><code>Column</code>: name, type, length, precision/scale, nullable, primary key, auto-increment, default value
+  (a value or an <code>Expression</code>), description, fractional seconds digits, multi-valued (Access).</li>
+<li><code>Index</code>: name, columns (with their sort direction, or an <code>Expression</code>), unique, <code>WHERE</code> condition.</li>
+<li><code>CheckConstraint</code>: expression (standard SQL), name.</li>
+<li><code>View</code>: name, <code>SELECT</code> statement (standard SQL), description. Access select and union queries are
+  read as views.</li>
+<li><code>Trigger</code>: name, table, complete <code>CREATE TRIGGER</code> statement (SQLite).</li>
+<li><code>Attachment</code>: file of an Access attachment column (name, data, type, modification date).</li>
+<li><code>ForeignKey</code>: name, columns, referenced table and columns, <code>ON DELETE</code> / <code>ON UPDATE</code> actions
+  (<code>NO ACTION</code>, <code>CASCADE</code>, <code>SET NULL</code>, <code>SET DEFAULT</code>, <code>RESTRICT</code>).</li>
+<li><code>ColumnType</code>: the logical types and their PHP values:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ColumnType</th>
+<th>PHP value</th>
+<th>SQLite</th>
+<th>HSQLDB (ODB)</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BOOLEAN</code></td>
+<td><code>bool</code></td>
+<td><code>BOOLEAN</code> (0/1)</td>
+<td><code>BOOLEAN</code></td>
+<td>Yes/No</td>
+</tr>
+<tr>
+<td><code>TINYINT</code>, <code>SMALLINT</code>, <code>INTEGER</code>, <code>BIGINT</code></td>
+<td><code>int</code></td>
+<td><code>TINYINT</code>...</td>
+<td><code>TINYINT</code>...</td>
+<td>Byte, Integer, Long Integer, Large Number (2016)</td>
+</tr>
+<tr>
+<td><code>FLOAT</code>, <code>DOUBLE</code></td>
+<td><code>float</code></td>
+<td><code>REAL</code>, <code>DOUBLE</code></td>
+<td><code>REAL</code>, <code>DOUBLE</code></td>
+<td>Single, Double</td>
+</tr>
+<tr>
+<td><code>DECIMAL</code></td>
+<td>numeric <code>string</code></td>
+<td><code>DECIMAL(p,s)</code></td>
+<td><code>DECIMAL(p,s)</code></td>
+<td>Decimal, Currency for <code>DECIMAL(19,4)</code></td>
+</tr>
+<tr>
+<td><code>TEXT</code></td>
+<td><code>string</code></td>
+<td><code>VARCHAR(n)</code> / <code>TEXT</code></td>
+<td><code>VARCHAR(n)</code></td>
+<td>Short Text (≤ 255), Long Text above</td>
+</tr>
+<tr>
+<td><code>LONGTEXT</code></td>
+<td><code>string</code></td>
+<td><code>TEXT</code></td>
+<td><code>LONGVARCHAR</code></td>
+<td>Long Text (memo)</td>
+</tr>
+<tr>
+<td><code>DATE</code>, <code>TIME</code>, <code>DATETIME</code></td>
+<td><code>DateTimeImmutable</code></td>
+<td>ISO 8601 text</td>
+<td><code>DATE</code>, <code>TIME</code>, <code>TIMESTAMP</code></td>
+<td>Date/Time</td>
+</tr>
+<tr>
+<td><code>BLOB</code></td>
+<td>binary <code>string</code></td>
+<td><code>BLOB</code></td>
+<td><code>LONGVARBINARY</code></td>
+<td>OLE Object</td>
+</tr>
+<tr>
+<td><code>GUID</code></td>
+<td><code>string</code> (<code>{XXXXXXXX-...}</code>)</td>
+<td><code>GUID</code> (text)</td>
+<td><code>CHAR(38)</code></td>
+<td>Replication ID</td>
+</tr>
+<tr>
+<td><code>HYPERLINK</code></td>
+<td><code>string</code></td>
+<td><code>HYPERLINK TEXT</code></td>
+<td><code>LONGVARCHAR</code></td>
+<td>Hyperlink</td>
+</tr>
+<tr>
+<td><code>ATTACHMENT</code></td>
+<td><code>Attachment[]</code></td>
+<td>file names (text)</td>
+<td>file names (text)</td>
+<td>read; written as text</td>
+</tr>
+</tbody>
+</table>
+<p>A multi-valued column (<code>Column::setMultiValued()</code>) holds a list of values: read from Access, written
+as text (<code>"a; b"</code>) by all the writers.</p>
+<p>Values given to <code>Table::addRow()</code> are converted to these PHP types (<code>'abc'</code> for an <code>INTEGER</code> column
+throws an <code>InvalidArgumentException</code>). Auto-increment columns get the next value when they are <code>null</code>.</p>
+<h2 id="limits">Limits</h2>
+<ul>
+<li>Access: generated files are validated with <a href="https://jackcess.sourceforge.io/">Jackcess</a> (reading,
+  index lookups, relationships with cascades, inserting rows, creating tables) and this library's
+  reader. They have <strong>not</strong> been tested in Microsoft Access. They are built from empty databases
+  created by Access (see <a href="https://github.com/PHPOffice/PhpDatabase/blob/master/NOTICE">NOTICE</a>), like Jackcess does.</li>
+<li>Access: select and union queries are read and written as views; the other queries (action,
+  crosstab, data definition, pass-through, with parameters), forms, reports and macros are not.
+  Check constraints are combined in the validation rule of the table. Attachments and multi-valued
+  fields are read, but written as text. Calculated columns (Access 2010) are read as plain values
+  (their decimals with 18 digits after the point), their expression is not. Dates keep
+  microseconds (the 7th digit of the extended date/time is lost). <code>SET DEFAULT</code> and <code>RESTRICT</code> are
+  written as "no action". Encrypted or password protected databases (Office crypto) are not supported.</li>
+<li>ODB: only the embedded HSQLDB engine is supported (not Firebird, not external data sources).
+  Tables are written as <code>MEMORY</code> tables, which LibreOffice opens like the <code>CACHED</code> tables it creates.
+  A foreign key is written only when the referenced columns are a primary key or a unique index
+  (required by HSQLDB). HSQLDB 1.8 has no partial/expression indexes nor triggers, no descending
+  index columns; views are written only when HSQLDB can load them (an invalid view prevents the
+  whole database from opening). The <code>database/log</code> file of an unclosed database is replayed. Dates of
+  the CACHED tables are stored by HSQLDB in the time zone of the Java VM: they are read in the
+  default time zone of PHP.</li>
+<li>SQLite: the <code>-wal</code> file next to the database is applied when reading (committed frames only).
+  Virtual tables are not read nor written. Expression and partial indexes are written for the
+  expressions handled by the evaluator of the library (SQLite semantics: operators, <code>CASE</code>, <code>CAST</code>,
+  <code>lower</code>, <code>substr</code>...). Index names are global in SQLite: they must be unique in the database.
+  Values not matching the declared type of their column are read as <code>null</code>.</li>
+<li>Files are read in memory: very large databases need some memory.</li>
+</ul>
+<h2 id="development">Development</h2>
+<div class="highlight"><pre><span></span><code>composer<span class="w"> </span>install
+composer<span class="w"> </span><span class="nb">test</span><span class="w">       </span><span class="c1"># PHPUnit</span>
+composer<span class="w"> </span>phpstan<span class="w">    </span><span class="c1"># PHPStan (level 6)</span>
+composer<span class="w"> </span>samples
+</code></pre></div>
+<h2 id="license">License</h2>
+<p>PhpOffice\PhpDatabase is licensed under <a href="https://github.com/PHPOffice/PhpDatabase/blob/master/COPYING.LESSER">LGPL v3</a>. The Access templates and index code
+tables come from Jackcess (Apache License 2.0): see <a href="https://github.com/PHPOffice/PhpDatabase/blob/master/NOTICE">NOTICE</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["search.highlight", "search.suggest"], "search": "assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
