@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ruleset name="PhpDatabase PHP Mess Detector Rule Set"
+    xmlns="http://pmd.sf.net/ruleset/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+    xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <rule ref="rulesets/naming.xml">
+        <exclude name="LongVariable" />
+        <exclude name="ShortClassName" />
+        <exclude name="ShortVariable" />
+        <exclude name="ShortMethodName" />
+    </rule>
+    <rule ref="rulesets/naming.xml/LongVariable">
+        <properties>
+            <property name="maximum" value="32" />
+        </properties>
+    </rule>
+    <rule ref="rulesets/naming.xml/ShortClassName">
+        <properties>
+            <property name="minimum" value="2" />
+        </properties>
+    </rule>
+    <rule ref="rulesets/naming.xml/ShortVariable">
+        <!-- $a / $b are the two sides of usort() comparators and binary operators -->
+        <!-- $id, $fk, $to, $on are the SQL / Access words they stand for -->
+        <!-- $s0 / $s1 are the two halves of the SQLite WAL checksum -->
+        <properties>
+            <property name="exceptions" value="a,b,id,fk,to,on,s0,s1" />
+        </properties>
+    </rule>
+    <rule ref="rulesets/naming.xml/ShortMethodName">
+        <!-- Token::is() and Dialect::is() test a token against a keyword -->
+        <properties>
+            <property name="exceptions" value="is" />
+        </properties>
+    </rule>
+    <rule ref="rulesets/design.xml/ExitExpression" />
+    <rule ref="rulesets/design.xml/EvalExpression" />
+    <rule ref="rulesets/design.xml/GotoStatement" />
+    <rule ref="rulesets/design.xml/DepthOfInheritance" />
+    <rule ref="rulesets/design.xml/CouplingBetweenObjects">
+        <!-- Readers and writers map a whole format onto the model: Database, Table, Column,
+             Index, ForeignKey, View, Trigger... plus the Shared classes of the format -->
+        <!-- Shared/Sql/Parser and Reader/Odb/ScriptReader build every kind of object of the model -->
+        <properties>
+            <property name="maximum" value="25" />
+        </properties>
+    </rule>
+    <rule ref="rulesets/design.xml/NumberOfChildren" />
+    <rule ref="rulesets/unusedcode.xml" />
+    <rule ref="rulesets/controversial.xml" />
+</ruleset>

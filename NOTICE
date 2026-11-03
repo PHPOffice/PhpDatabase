@@ -1,0 +1,24 @@
+PhpOffice\PhpDatabase
+Copyright (c) PhpOffice contributors
+Licensed under the GNU Lesser General Public License version 3 (see COPYING.LESSER).
+
+This product includes files from Jackcess (https://jackcess.sourceforge.io/),
+licensed under the Apache License, Version 2.0
+(https://www.apache.org/licenses/LICENSE-2.0):
+
+- src/PhpDatabase/Resources/Access/empty2000.mdb.gz, empty2007.accdb.gz,
+  empty2010.accdb.gz, empty2016.accdb.gz, empty2019.accdb.gz: empty databases created by
+  Microsoft Access, distributed with Jackcess and used as templates by the Access writer;
+- tests/resources/files/jackcess-queries.accdb, jackcess-complex.accdb,
+  jackcess-extdate.accdb, jackcess-calculated.accdb: test databases of Jackcess (queryTestV2007,
+  complexDataTestV2010, extDateTestV2019, calcFieldTestV2010);
+- src/PhpDatabase/Resources/Access/index_codes_*.txt.gz: code tables of the text
+  index sort orders ("General Legacy" and "General").
+
+The algorithms of src/PhpDatabase/Writer/Accdb/TextIndexCodes.php and IndexKey.php
+follow the index encoding implemented by Jackcess (GeneralLegacyIndexCodes, IndexData).
+src/PhpDatabase/Shared/Access/QueryFormat.php follows the query formatting of Jackcess (QueryImpl,
+SelectQueryImpl, UnionQueryImpl); the attachment and extended date encodings follow
+AttachmentColumnInfoImpl, ColumnImpl and CalculatedColumnUtil.
+
+Copyright (c) 2005 Health Market Science, Inc. and the Jackcess contributors.
