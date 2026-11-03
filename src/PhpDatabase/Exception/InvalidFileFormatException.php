@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * This file is part of PhpOffice\PhpDatabase - A pure PHP library for reading and writing
+ * database documents (ACCDB, ODB, SQLite).
+ *
+ * PhpOffice\PhpDatabase is free software distributed under the terms of the MIT License.
+ *
+ * @license https://opensource.org/licenses/MIT MIT
+ */
+
+declare(strict_types=1);
+
+namespace PhpOffice\PhpDatabase\Exception;
+
+class InvalidFileFormatException extends DatabaseException
+{
+    public function __construct(string $path, string $class, string $error = '')
+    {
+        $message = sprintf('The file %s is not in the good format for %s', $path, $class);
+        if ('' !== $error) {
+            $message .= ' (' . $error . ')';
+        }
+        parent::__construct($message);
+    }
+}

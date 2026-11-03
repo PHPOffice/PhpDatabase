@@ -1,0 +1,8 @@
+vendor/
+composer.lock
+.phpunit.cache/
+.phpunit.result.cache
+samples/results/*
+!samples/results/.gitkeep
+build/
+.php-cs-fixer.cache

@@ -1,0 +1,66 @@
+name: Validator
+on: [push, pull_request]
+jobs:
+  validator:
+    name: ${{ matrix.name }} Validator
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: SQLite
+          - name: Access
+          - name: ODB
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: dom, mbstring, zlib
+      - uses: actions/checkout@v4
+
+      - name: Composer Install
+        run: composer install --ansi --prefer-dist --no-interaction --no-progress
+
+      - name: Generate samples files
+        run: composer run samples
+
+      - name: Setup Java
+        if: matrix.name != 'SQLite'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # https://www.sqlite.org/pragma.html#pragma_integrity_check
+      - name: Validate documents (SQLite)
+        if: matrix.name == 'SQLite'
+        run: |
+          python3 - samples/results/*.sqlite <<'PYTHON'
+          import sqlite3, sys
+          for path in sys.argv[1:]:
+              connection = sqlite3.connect(f'file:{path}?mode=ro', uri=True)
+              for pragma in ('integrity_check', 'foreign_key_check'):
+                  result = connection.execute(f'PRAGMA {pragma}').fetchall()
+                  if result not in ([('ok',)], []):
+                      sys.exit(f'{path}: {pragma}: {result}')
+              for (table,) in connection.execute("SELECT name FROM sqlite_schema WHERE type = 'table' AND name NOT LIKE 'sqlite_%'"):
+                  count = connection.execute(f'SELECT COUNT(*) FROM "{table}"').fetchone()[0]
+                  print(f'{path}: {table}: {count} rows')
+          PYTHON
+
+      # Jackcess reads every page, index, relationship and query of the ACCDB and MDB files
+      - name: Validate documents (Access)
+        if: matrix.name == 'Access'
+        run: |
+          wget -q https://repo1.maven.org/maven2/com/healthmarketscience/jackcess/jackcess/4.0.5/jackcess-4.0.5.jar
+          wget -q https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
+          wget -q https://repo1.maven.org/maven2/commons-logging/commons-logging/1.3.0/commons-logging-1.3.0.jar
+          java -cp jackcess-4.0.5.jar:commons-lang3-3.14.0.jar:commons-logging-1.3.0.jar .github/validator/AccessValidator.java samples/results/*.accdb samples/results/*.mdb
+
+      # HSQLDB 1.8 is the engine embedded in the ODB files of LibreOffice Base
+      - name: Validate documents (ODB)
+        if: matrix.name == 'ODB'
+        run: |
+          wget -q https://repo1.maven.org/maven2/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar
+          java -cp hsqldb-1.8.0.10.jar .github/validator/OdbValidator.java samples/results/*.odb

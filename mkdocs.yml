@@ -1,0 +1,46 @@
+site_name: PhpDatabase
+site_url: https://phpoffice.github.io/PhpDatabase
+repo_url: https://github.com/PHPOffice/PhpDatabase
+repo_name: PHPOffice/PhpDatabase
+edit_uri: edit/master/docs/
+
+## Theme
+theme:
+  name: material
+  palette:
+    primary: orange
+  features:
+    - search.highlight
+    - search.suggest
+
+## Plugins
+plugins:
+  - search
+
+## Config
+extra:
+  generator: false
+markdown_extensions:
+  ## Syntax highlighting
+  - pymdownx.highlight
+  - pymdownx.superfences
+  ## Support for emojis
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  ## Support for call-outs
+  - admonition
+  - pymdownx.details
+  ## Tables of features
+  - tables
+use_directory_urls: false
+
+## Navigation
+nav:
+  - Introduction: 'index.md'
+  - Features: 'features.md'
+  - Formats: 'formats.md'
+  - Developers:
+    - 'Coveralls': 'https://coveralls.io/github/PHPOffice/PhpDatabase'
+    - 'Code Coverage': 'coverage/index.html'
+    - 'PHPDoc': 'docs/index.html'
